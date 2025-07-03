@@ -51,7 +51,7 @@ const Footer = () => {
                   to="/segmentos" 
                   className="font-open-sans text-gray-300 hover:text-white transition-colors duration-200"
                 >
-                  Segmentos de Atuação
+                  Produtos
                 </Link>
               </li>
               <li>
@@ -109,7 +109,7 @@ const Footer = () => {
               <h4 className="font-inter font-medium text-white mb-3">Siga-nos</h4>
               <div className="flex space-x-4">
                 <a 
-                  href="https://wa.me/5511999999999" 
+                  href="https://wa.me/551144188329" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition-colors duration-200"

@@ -2,7 +2,28 @@ import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Shield, Users, Target, CheckCircle, ArrowRight } from 'lucide-react'
+import { useRef } from 'react' // 1. Importar o useRef para o plugin
+import Autoplay from "embla-carousel-autoplay" // 2. Importar o plugin de autoplay
 
+// 3. Importar os componentes do Carrossel
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+
+// 4. Importar o GIF e os logos dos clientes
+import seuGif from '../assets/viragif.gif';
+
+import logoAlupar from '../assets/logos/alupar.png';
+import logoWTorre from '../assets/logos/wtorre.png';
+import logoLyon from '../assets/logos/lyon.png';
+import logoVinci from '../assets/logos/vinci.png';
+import logoSnef from '../assets/logos/snef.png';
+import logoNova from '../assets/logos/novaengevio.png'
+import logoDetronic from '../assets/logos/detronic.png'
 const Home = () => {
   const segmentos = [
     {
@@ -28,13 +49,25 @@ const Home = () => {
   ]
 
   const clientes = [
-    "Alupar", "WTorre", "Engevix", "Vinci", "Luzes Paulistanas"
+    { name: "Alupar", logo: logoAlupar },
+    { name: "WTorre", logo: logoWTorre },
+    { name: "Lyon", logo: logoLyon },
+    { name: "Vinci", logo: logoVinci },
+    { name: "Snef", logo: logoSnef },
+    { name: "Nova", logo: logoNova },
+    { name: "Detronic", logo: logoDetronic },
+    // Adicione mais clientes aqui
+    // Ex: { name: "Outro Cliente", logo: logoOutroCliente },
   ]
+
+  const plugin = useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  )
 
   return (
     <div className="min-h-screen">
       {/* Hero Section - "What" */}
-      <section className="bg-fb-blue-deep text-white py-20">
+      <section className="relative text-white py-20 bg-cover bg-center" style={{ backgroundImage: `url(${seuGif})` }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="font-inter font-bold text-4xl md:text-6xl mb-6">
@@ -223,7 +256,7 @@ const Home = () => {
 
 
       {/* Clientes (Validação) */}
-      <section className="py-16 bg-white">
+<section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-inter font-bold text-3xl md:text-4xl text-fb-blue-deep mb-6">
@@ -234,36 +267,38 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
-            <div className="text-center">
-              <div className="bg-white p-6 rounded-lg shadow-md h-24 flex items-center justify-center">
-                <img src="/src/assets/clientes/image6.png" alt="Alupar" className="max-h-16 max-w-full object-contain" />
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="bg-white p-6 rounded-lg shadow-md h-24 flex items-center justify-center">
-                <img src="/src/assets/clientes/image8.png" alt="WTorre" className="max-h-16 max-w-full object-contain" />
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="bg-white p-6 rounded-lg shadow-md h-24 flex items-center justify-center">
-                <img src="/src/assets/clientes/image10.png" alt="Engevix" className="max-h-16 max-w-full object-contain" />
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="bg-white p-6 rounded-lg shadow-md h-24 flex items-center justify-center">
-                <img src="/src/assets/clientes/image12.png" alt="Vinci" className="max-h-16 max-w-full object-contain" />
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="bg-white p-6 rounded-lg shadow-md h-24 flex items-center justify-center">
-                <img src="/src/assets/clientes/image14.png" alt="Luzes Paulistanas" className="max-h-16 max-w-full object-contain" />
-              </div>
-            </div>
-          </div>
+          {/* 7. Implementação do Carrossel */}
+          <Carousel
+            plugins={[plugin.current]}
+            className="w-full max-w-6xl mx-auto"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent>
+              {clientes.map((cliente, index) => (
+                <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/5">
+                  <div className="p-1">
+                      <div className="bg-white p-6 rounded-lg shadow-md h-28 flex items-center justify-center">
+                        <img 
+                          src={cliente.logo} 
+                          alt={cliente.name} 
+                          className="max-h-20 max-w-full object-contain" 
+                        />
+                      </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden sm:flex" />
+            <CarouselNext className="hidden sm:flex" />
+          </Carousel>
 
           <div className="text-center mt-12">
-            <Button 
+            <Button
               asChild
               variant="outline"
               className="border-fb-blue-deep text-fb-blue-deep hover:bg-fb-blue-deep hover:text-white font-inter font-semibold"

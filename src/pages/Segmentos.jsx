@@ -2,6 +2,26 @@ import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Shield, Building, Users, Zap, Plus, ArrowRight, CheckCircle } from 'lucide-react'
+import { useRef } from 'react'
+import Autoplay from "embla-carousel-autoplay"
+
+// 1. Importar os componentes do Carrossel
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+
+// 2. Importar os logos dos clientes
+import logoAlupar from '../assets/logos/alupar.png';
+import logoWTorre from '../assets/logos/wtorre.png';
+import logoLyon from '../assets/logos/lyon.png';
+import logoVinci from '../assets/logos/vinci.png';
+import logoSnef from '../assets/logos/snef.png';
+import logoNova from '../assets/logos/novaengevio.png'
+import logoDetronic from '../assets/logos/detronic.png'
 
 const Segmentos = () => {
   const segmentos = [
@@ -12,7 +32,7 @@ const Segmentos = () => {
       icon: Shield,
       produtos: [
         "Bid Bond - Garantia de participação em licitações",
-        "Performance Bond - Garantia de execução contratual", 
+        "Performance Bond - Garantia de execução contratual",
         "Completion Bond - Garantia de conclusão de projetos",
         "Garantias Judiciais e Tributárias",
         "Garantias Financeiras e Imobiliárias"
@@ -27,7 +47,7 @@ const Segmentos = () => {
       icon: Building,
       produtos: [
         "Riscos Nomeados e Operacionais",
-        "Riscos de Engenharia", 
+        "Riscos de Engenharia",
         "Responsabilidade Civil",
         "Riscos Diversos",
         "Seguro Condomínio"
@@ -82,8 +102,15 @@ const Segmentos = () => {
     }
   ]
 
+  // 3. Array de clientes com objetos (nome e logo)
   const clientes = [
-    "Alupar", "WTorre", "Engevix", "Vinci", "Luzes Paulistanas"
+    { name: "Alupar", logo: logoAlupar },
+    { name: "WTorre", logo: logoWTorre },
+    { name: "Lyon", logo: logoLyon },
+    { name: "Vinci", logo: logoVinci },
+    { name: "Snef", logo: logoSnef },
+    { name: "Nova", logo: logoNova },
+    { name: "Detronic", logo: logoDetronic },
   ]
 
   const faqItems = [
@@ -105,6 +132,11 @@ const Segmentos = () => {
     }
   ]
 
+  // 4. Configuração do plugin de autoplay
+  const plugin = useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  )
+
   return (
     <div className="min-h-screen">
       {/* Hero: Projetos Estruturados */}
@@ -117,7 +149,7 @@ const Segmentos = () => {
             <p className="font-open-sans text-xl md:text-2xl mb-8 max-w-4xl mx-auto text-gray-200">
               Concentramos nossa expertise em setores estratégicos do mercado de seguros, oferecendo soluções especializadas para cada área de atuação.
             </p>
-            <Button 
+            <Button
               asChild
               size="lg"
               className="bg-white text-fb-blue-deep hover:bg-gray-100 font-inter font-semibold"
@@ -133,11 +165,8 @@ const Segmentos = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-inter font-bold text-3xl md:text-4xl text-fb-blue-deep mb-6">
-              Produtos e Serviços
-            </h2>
-            <p className="font-open-sans text-lg text-gray-700 max-w-3xl mx-auto">
               Oferecemos soluções completas em seguros corporativos, com foco em riscos complexos e atendimento personalizado para cada necessidade.
-            </p>
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -176,7 +205,7 @@ const Segmentos = () => {
                           </ul>
                         </div>
 
-                        <Button 
+                        <Button
                           asChild
                           variant="outline"
                           size="sm"
@@ -196,7 +225,7 @@ const Segmentos = () => {
         </div>
       </section>
 
-      {/* Clientes (Validação) */}
+      {/* Clientes (Validação) - AGORA COM CARROSSEL */}
       <section className="py-16 bg-fb-gray-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -208,17 +237,35 @@ const Segmentos = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
-            {clientes.map((cliente, index) => (
-              <div key={index} className="text-center">
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <p className="font-inter font-semibold text-fb-blue-deep">
-                    {cliente}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* 5. Implementação do Carrossel */}
+          <Carousel
+            plugins={[plugin.current]}
+            className="w-full max-w-6xl mx-auto"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent>
+              {clientes.map((cliente, index) => (
+                <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/5">
+                  <div className="p-1">
+                      <div className="bg-white p-6 rounded-lg shadow-md h-28 flex items-center justify-center">
+                        <img
+                          src={cliente.logo}
+                          alt={cliente.name}
+                          className="max-h-20 max-w-full object-contain"
+                        />
+                      </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden sm:flex" />
+            <CarouselNext className="hidden sm:flex" />
+          </Carousel>
         </div>
       </section>
 
@@ -233,14 +280,14 @@ const Segmentos = () => {
               Entre em contato conosco e descubra como podemos criar uma solução personalizada para suas necessidades de proteção empresarial.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
+              <Button
                 asChild
                 size="lg"
                 className="bg-white text-fb-blue-deep hover:bg-gray-100 font-inter font-semibold"
               >
                 <Link to="/cotacao">Solicitar Cotação</Link>
               </Button>
-              <Button 
+              <Button
                 asChild
                 variant="outline"
                 size="lg"
@@ -284,7 +331,7 @@ const Segmentos = () => {
             <p className="font-open-sans text-gray-600 mb-4">
               Não encontrou a resposta que procurava?
             </p>
-            <Button 
+            <Button
               asChild
               variant="outline"
               className="border-fb-blue-deep text-fb-blue-deep hover:bg-fb-blue-deep hover:text-white font-inter font-semibold"
@@ -299,4 +346,3 @@ const Segmentos = () => {
 }
 
 export default Segmentos
-

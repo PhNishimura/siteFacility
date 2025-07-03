@@ -12,11 +12,13 @@ import SegmentoPatrimonial from './pages/SegmentoPatrimonial'
 import SegmentoRCRE from './pages/SegmentoRCRE'
 import SegmentoBeneficios from './pages/SegmentoBeneficios'
 import SegmentoOutros from './pages/SegmentoOutros'
+import ScrollToTop from './components/ScrollToTop' // Importe o novo componente
 import './App.css'
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-grow">
@@ -41,4 +43,3 @@ function App() {
 }
 
 export default App
-
