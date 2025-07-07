@@ -166,7 +166,7 @@ const Segmentos = () => {
           <div className="text-center mb-12">
             <h2 className="font-inter font-bold text-3xl md:text-4xl text-fb-blue-deep mb-6">
               Oferecemos soluções completas em seguros corporativos, com foco em riscos complexos e atendimento personalizado para cada necessidade.
-            </h2>
+            </h2> 
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

@@ -2,6 +2,29 @@ import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Building, Zap, Globe, Calendar, MapPin, ArrowRight, CheckCircle } from 'lucide-react'
+import { useRef } from 'react'
+import Autoplay from "embla-carousel-autoplay"
+
+// 1. Importar os componentes do Carrossel
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+
+// 2. Importar os logos dos clientes
+import logoAlupar from '../assets/logos/alupar.png';
+import logoWTorre from '../assets/logos/wtorre.png';
+import logoLyon from '../assets/logos/lyon.png';
+import logoVinci from '../assets/logos/vinci.png';
+import logoSnef from '../assets/logos/snef.png';
+import logoNova from '../assets/logos/novaengevio.png';
+import logoDetronic from '../assets/logos/detronic.png';
+// Lembre-se de adicionar os logos para Engevix e Luzes Paulistanas se os tiver
+// import logoEngevix from '../assets/logos/engevix.png';
+// import logoLuzes from '../assets/logos/luzespaulistanas.png';
 
 const Cases = () => {
   const casesEnergia = [
@@ -14,7 +37,7 @@ const Cases = () => {
     },
     {
       nome: "UHE Ijuí",
-      cliente: "Alupar", 
+      cliente: "Alupar",
       capacidade: "51 MW",
       conclusao: "2012",
       tipo: "Usina Hidrelétrica"
@@ -22,7 +45,7 @@ const Cases = () => {
     {
       nome: "UHE Foz do Rio Claro",
       cliente: "Alupar",
-      capacidade: "68,4 MW", 
+      capacidade: "68,4 MW",
       conclusao: "2012",
       tipo: "Usina Hidrelétrica"
     },
@@ -66,15 +89,17 @@ const Cases = () => {
       tipo: "Infraestrutura Aeroportuária"
     }
   ]
-
-  const casesInternacional = [
-    {
-      nome: "Campo Pequeno - Portugal",
-      cliente: "WTorre",
-      valor: "€100 milhões",
-      conclusao: "2006",
-      tipo: "Desenvolvimento Imobiliário"
-    }
+  
+  // 3. Array de clientes com objetos para o carrossel
+  const clientes = [
+    { name: "Alupar", logo: logoAlupar },
+    { name: "WTorre", logo: logoWTorre },
+    { name: "Lyon", logo: logoLyon },
+    { name: "Vinci", logo: logoVinci },
+    { name: "Snef", logo: logoSnef },
+    { name: "Nova", logo: logoNova },
+    { name: "Detronic", logo: logoDetronic },
+    // Adicione os outros clientes com seus logos aqui
   ]
 
   const faqItems = [
@@ -95,6 +120,11 @@ const Cases = () => {
       resposta: "Oferecemos acompanhamento estratégico em cada fase do projeto, desde a licitação até a entrada em operação, garantindo proteção contínua."
     }
   ]
+  
+  // 4. Configuração do plugin de autoplay
+  const plugin = useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  )
 
   return (
     <div className="min-h-screen">
@@ -109,14 +139,14 @@ const Cases = () => {
               Transformamos riscos em oportunidades por meio de inteligência e precisão. Conheça alguns dos projetos que ajudamos a tirar do papel com segurança, estratégia e resultados.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
+              <Button
                 asChild
                 size="lg"
                 className="bg-white text-fb-blue-deep hover:bg-gray-100 font-inter font-semibold"
               >
                 <Link to="/cotacao">Solicitar Cotação</Link>
               </Button>
-              <Button 
+              <Button
                 asChild
                 variant="outline"
                 size="lg"
@@ -285,7 +315,6 @@ const Cases = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Projeto Internacional */}
             <Card className="hover:shadow-lg transition-shadow duration-300">
               <CardContent className="p-6">
                 <div className="mb-4">
@@ -317,7 +346,6 @@ const Cases = () => {
               </CardContent>
             </Card>
 
-            {/* Tecnologia */}
             <Card className="hover:shadow-lg transition-shadow duration-300">
               <CardContent className="p-6">
                 <div className="mb-4">
@@ -355,7 +383,7 @@ const Cases = () => {
         </div>
       </section>
 
-      {/* Clientes (Validação) */}
+      {/* Clientes (Validação) - AGORA COM CARROSSEL */}
       <section className="py-16 bg-fb-blue-deep text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -363,21 +391,38 @@ const Cases = () => {
               Nossos Clientes Fazem Parte Dessa História
             </h2>
             <p className="font-open-sans text-lg text-gray-200 max-w-3xl mx-auto">
-              Projetos que ajudamos a tirar do papel, com segurança, estratégia e resultados.
+              Empresas que confiam em nossa expertise para proteger seus projetos mais importantes.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
-            {["Alupar", "WTorre", "Engevix", "Vinci", "Luzes Paulistanas"].map((cliente, index) => (
-              <div key={index} className="text-center">
-                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                  <p className="font-inter font-semibold text-white">
-                    {cliente}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <Carousel
+            plugins={[plugin.current]}
+            className="w-full max-w-6xl mx-auto"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent>
+              {clientes.map((cliente, index) => (
+                <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/5">
+                  <div className="p-1">
+                      <div className="bg-white backdrop-blur-sm rounded-lg h-28 flex items-center justify-center p-4 transition-all duration-300 hover:bg-white/20">
+                        <img
+                          src={cliente.logo}
+                          alt={cliente.name}
+                          className="max-h-16 max-w-full object-contain"
+                        />
+                      </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden sm:flex text-white bg-white/10 hover:bg-white/20 border-white/20" />
+            <CarouselNext className="hidden sm:flex text-white bg-white/10 hover:bg-white/20 border-white/20" />
+          </Carousel>
         </div>
       </section>
 
@@ -392,14 +437,14 @@ const Cases = () => {
               Entre em contato conosco e descubra como podemos estruturar uma solução personalizada para viabilizar seu projeto com segurança e eficiência.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
+              <Button
                 asChild
                 size="lg"
                 className="bg-fb-blue-deep hover:bg-fb-blue-deep/90 text-white font-inter font-semibold"
               >
                 <Link to="/cotacao">Solicitar Cotação</Link>
               </Button>
-              <Button 
+              <Button
                 asChild
                 variant="outline"
                 size="lg"
@@ -443,7 +488,7 @@ const Cases = () => {
             <p className="font-open-sans text-gray-600 mb-4">
               Tem um projeto em mente? Vamos conversar!
             </p>
-            <Button 
+            <Button
               asChild
               className="bg-fb-blue-deep hover:bg-fb-blue-deep/90 text-white font-inter font-semibold"
             >
@@ -459,4 +504,3 @@ const Cases = () => {
 }
 
 export default Cases
-

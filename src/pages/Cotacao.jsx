@@ -250,7 +250,7 @@ const Cotacao = () => {
                   
                   <div className="space-y-4">
                     <a 
-                      href="https://wa.me/5511999999999"
+                      href="https://wa.me/551144188329"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center p-3 bg-green-50 rounded-lg hover:bg-green-100 transition-colors"
@@ -258,7 +258,7 @@ const Cotacao = () => {
                       <MessageCircle className="h-6 w-6 text-green-600 mr-3" />
                       <div>
                         <p className="font-inter font-medium text-green-800">WhatsApp</p>
-                        <p className="font-open-sans text-sm text-green-600">+55 11 99999-9999</p>
+                        <p className="font-open-sans text-sm text-green-600">+55 11 4418-8329</p>
                       </div>
                     </a>
 
@@ -280,7 +280,7 @@ const Cotacao = () => {
                       <Phone className="h-6 w-6 text-gray-600 mr-3" />
                       <div>
                         <p className="font-inter font-medium text-gray-800">Telefone</p>
-                        <p className="font-open-sans text-sm text-gray-600">+55 11 99999-9999</p>
+                        <p className="font-open-sans text-sm text-gray-600">+55 11 4418-8329</p>
                       </div>
                     </a>
                   </div>
@@ -371,7 +371,7 @@ const Cotacao = () => {
                 size="lg"
                 className="bg-white text-fb-blue-deep hover:bg-gray-100 font-inter font-semibold"
               >
-                <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/551144188329" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-5 w-5" />
                   Falar no WhatsApp
                 </a>

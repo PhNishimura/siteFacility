@@ -220,43 +220,40 @@ const Home = () => {
       {/* Hero Section - "Who" */}
       <section className="py-16 bg-fb-gray-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+          {/* --- INÍCIO DA ALTERAÇÃO --- */}
+          <div className="text-center">
+            
+            <div className="max-w-4xl mx-auto"> {/* Container para limitar a largura do texto */}
               <h2 className="font-inter font-bold text-3xl md:text-4xl text-fb-blue-deep mb-6">
                 Como atuamos com projetos
               </h2>
-              <p className="font-open-sans text-lg text-fb-blue-deep mb-6">
-                Trabalhamos de forma consultiva e personalizada. Com 30 anos de expertise, navegamos pelas complexidades do mercado segurador, criando soluções sob medida que combinam diferentes coberturas para atender necessidades específicas.
+              <p className="font-open-sans text-lg text-gray-700 mb-6">
+                Trabalhamos de forma consultiva e personalizada. Rumo às três décadas de história e inovação, navegamos pelas complexidades do mercado segurador, criando soluções sob medida que combinam diferentes coberturas para atender necessidades específicas.
               </p>
-              <p className="font-open-sans text-lg text-fb-blue-deep mb-8">
+              <p className="font-open-sans text-lg text-gray-700 mb-8">
                 Nossa abordagem vai além do papel tradicional de corretora para nos tornarmos verdadeiros parceiros estratégicos, construindo relacionamentos duradouros baseados em confiança mútua.
               </p>
-              <Button 
-                asChild
-                className="bg-fb-blue-deep hover:bg-fb-blue-deep/90 text-white font-inter font-semibold"
-              >
-                <Link to="/cases">
-                  Ver Cases de Sucesso <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
             </div>
-            <div className="bg-fb-gray-light p-8 rounded-lg">
-              <div className="text-center">
-                <div className="text-6xl font-inter font-bold text-fb-blue-deep mb-4">30</div>
-                <p className="font-inter font-semibold text-xl text-fb-blue-deep mb-2">Anos de Experiência</p>
-                <p className="font-open-sans text-gray-600">
-                  Três décadas construindo pontes entre sonhos empresariais e sua realização segura
-                </p>
-              </div>
-            </div>
+            
+            <Button 
+              asChild
+              size="lg" // Tamanho do botão um pouco maior para mais destaque
+              className="bg-fb-blue-deep hover:bg-fb-blue-deep/90 text-white font-inter font-semibold"
+            >
+              <Link to="/cases">
+                Ver Cases de Sucesso <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+
           </div>
+          {/* --- FIM DA ALTERAÇÃO --- */}
         </div>
       </section>
 
 
 
       {/* Clientes (Validação) */}
-<section className="py-16 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-inter font-bold text-3xl md:text-4xl text-fb-blue-deep mb-6">
