@@ -69,7 +69,7 @@ const MarcarReuniao = () => {
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 mr-2 text-green-400" />
-                <span>30 Anos de Experiência</span>
+                <span>Uma trajetória de 27 anos de experiência</span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 mr-2 text-green-400" />
@@ -159,7 +159,7 @@ const MarcarReuniao = () => {
 
             {/* Coluna da direita */}
             <div className="space-y-6">
-              <Card>
+              <Card className="w-full md:w-[300px] mx-auto">
                 <CardContent className="p-6">
                   <h3 className="font-inter font-semibold text-lg text-fb-blue-deep mb-4">Outras Formas de Contato</h3>
                   <div className="space-y-4">
@@ -187,7 +187,7 @@ const MarcarReuniao = () => {
                   </div>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="w-full md:w-[300px] mx-auto">
                 <CardContent className="p-6">
                   <h3 className="font-inter font-semibold text-lg text-fb-blue-deep mb-4">O que esperar da reunião?</h3>
                   <div className="space-y-3">
@@ -220,7 +220,7 @@ const MarcarReuniao = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="font-inter font-bold text-3xl md:text-4xl mb-6">
-              30 Anos Protegendo Grandes Projetos
+              Desde 1997 Protegendo Grandes Projetos
             </h2>
             <p className="font-open-sans text-lg mb-8 max-w-3xl mx-auto text-gray-200">
               Nossa expertise em seguros corporativos e projetos está à sua disposição. Vamos conversar sobre como podemos proteger e viabilizar seus projetos.
@@ -232,7 +232,7 @@ const MarcarReuniao = () => {
                   Falar no WhatsApp
                 </a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-fb-blue-deep font-inter font-semibold">
+              <Button asChild variant="outline" size="lg" className="bg-white text-fb-blue-deep hover:bg-gray-100 font-inter font-semibold">
                 <a href="mailto:contato@facilitybond.com.br">
                   <Mail className="mr-2 h-5 w-5" />
                   Enviar E-mail

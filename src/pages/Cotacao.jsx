@@ -41,10 +41,18 @@ const Cotacao = () => {
     "Projetos"
   ]
 
+    const produtos = [
+    "Benéficios",
+    "Garantia", 
+    "Patrimonial", 
+    "RC & RE",
+    "Outros"
+  ]
+
   const faqItems = [
     {
       pergunta: "Quanto tempo leva para receber uma cotação?",
-      resposta: "Normalmente respondemos em até 24 horas úteis. Para casos mais complexos, pode levar até 48 horas para uma análise completa."
+      resposta: "Normalmente respondemos em até 24/48 horas úteis. Casos mais complexos exigem uma avaliação mais detalhada, o que pode estender o tempo de resposta."
     },
     {
       pergunta: "Preciso fornecer muita documentação?",
@@ -80,10 +88,6 @@ const Cotacao = () => {
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 mr-2 text-green-400" />
                 <span>Cotação Gratuita</span>
-              </div>
-              <div className="flex items-center">
-                <CheckCircle className="h-5 w-5 mr-2 text-green-400" />
-                <span>Resposta em 24h</span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 mr-2 text-green-400" />
@@ -200,17 +204,16 @@ const Cotacao = () => {
                         </Select>
                       </div>
                       <div>
-                        <Label htmlFor="produto" className="font-inter font-medium text-fb-blue-deep">
-                          Produto Específico
-                        </Label>
-                        <Input
-                          id="produto"
-                          type="text"
-                          value={formData.produto}
-                          onChange={(e) => handleInputChange('produto', e.target.value)}
-                          placeholder="Ex: Seguro Garantia, D&O, etc."
-                          className="mt-1"
-                        />
+                        <Label htmlFor="produtos" className="font-inter font-medium text-fb-blue-deep">Produto Específico</Label>
+                        {/* --- CORREÇÃO AQUI --- */}
+                        <Select onValueChange={(value) => handleInputChange('produto', value)}>
+                          <SelectTrigger className="mt-1"><SelectValue placeholder="Selecione um Produto" /></SelectTrigger>
+                          <SelectContent>
+                            {produtos.map((produto) => (
+                              <SelectItem key={produto} value={produto}>{produto}</SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
                       </div>
                     </div>
 
@@ -241,8 +244,8 @@ const Cotacao = () => {
             </div>
 
             {/* Informações de Contato */}
-            <div className="space-y-6">
-              <Card>
+            <div className="space-y-8">
+              <Card className="w-full md:w-[300px] mx-auto">
                 <CardContent className="p-6">
                   <h3 className="font-inter font-semibold text-lg text-fb-blue-deep mb-4">
                     Outras Formas de Contato
@@ -287,7 +290,7 @@ const Cotacao = () => {
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="w-full md:w-[300px] mx-auto">
                 <CardContent className="p-6">
                   <h3 className="font-inter font-semibold text-lg text-fb-blue-deep mb-4">
                     Por que escolher a Facility & Bond?
@@ -297,7 +300,7 @@ const Cotacao = () => {
                     <div className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                       <p className="font-open-sans text-sm text-gray-700">
-                        30 anos de expertise em seguros corporativos
+                        Experiência consolidada em seguros corporativos há quase três décadas
                       </p>
                     </div>
                     <div className="flex items-start">

@@ -22,6 +22,7 @@ import logoVinci from '../assets/logos/vinci.png';
 import logoSnef from '../assets/logos/snef.png';
 import logoNova from '../assets/logos/novaengevio.png';
 import logoDetronic from '../assets/logos/detronic.png';
+import logoacte from '../assets/logos/actemium.png'
 // Lembre-se de adicionar os logos para Engevix e Luzes Paulistanas se os tiver
 // import logoEngevix from '../assets/logos/engevix.png';
 // import logoLuzes from '../assets/logos/luzespaulistanas.png';
@@ -99,13 +100,14 @@ const Cases = () => {
     { name: "Snef", logo: logoSnef },
     { name: "Nova", logo: logoNova },
     { name: "Detronic", logo: logoDetronic },
+    { name: "Actemium", logo: logoacte }
     // Adicione os outros clientes com seus logos aqui
   ]
 
   const faqItems = [
     {
       pergunta: "Como a Facility & Bond estrutura projetos complexos?",
-      resposta: "Utilizamos nossa expertise de 30 anos para criar soluções sob medida, combinando diferentes coberturas e trabalhando de forma consultiva em todas as etapas do projeto."
+      resposta: "Utilizamos nossa expertise construída ao longo de quase três décadas para criar soluções sob medida, combinando diferentes coberturas e atuando de forma consultiva em todas as etapas do projeto."
     },
     {
       pergunta: "Qual o diferencial em projetos de grande porte?",
@@ -152,7 +154,7 @@ const Cases = () => {
                 size="lg"
                 className="bg-white text-fb-blue-deep hover:bg-gray-100 font-inter font-semibold"
               >
-                <Link to="/sobre-nos">Nossa História</Link>
+                <Link to="/marcar-reuniao">Marcar Reunião</Link>
               </Button>
             </div>
           </div>
@@ -450,7 +452,7 @@ const Cases = () => {
                 size="lg"
                 className="border-fb-blue-deep text-fb-blue-deep hover:bg-fb-blue-deep hover:text-white font-inter font-semibold"
               >
-                <a href="mailto:contato@facilitybond.com.br">Enviar E-mail</a>
+                 <Link to="/marcar-reuniao">Marcar Reunião</Link>
               </Button>
             </div>
           </div>

@@ -8,7 +8,7 @@ const SobreNos = () => {
   const pilares = [
     {
       title: "Expertise Visionária",
-      description: "Nossa profunda compreensão técnica, combinada com 30 anos de experiência no mercado, nos permite enxergar oportunidades e riscos onde outros veem apenas complexidade.",
+      description: "Nossa profunda compreensão técnica, aliada a quase três décadas de atuação no mercado, nos permite enxergar oportunidades e riscos onde outros veem apenas complexidade.",
       icon: Target
     },
     {
@@ -66,7 +66,7 @@ const SobreNos = () => {
           
           <div className="bg-fb-gray-light p-8 rounded-lg">
             <p className="font-open-sans text-lg text-gray-700 mb-6">
-              Com mais de três décadas de atuação no mercado, a Facility & Bond acumula experiência na estruturação de seguros estratégicos e personalizados para grandes projetos. Construímos relações duradouras com empresas que compartilham nossa visão de excelência, solidez e inovação em proteção de riscos complexos.
+              A Facility & Bond acumula experiência na estruturação de seguros estratégicos e personalizados para grandes projetos. Construímos relações duradouras com empresas que compartilham nossa visão de excelência, solidez e inovação em proteção de riscos complexos.
             </p>
             <p className="font-open-sans text-lg text-gray-700">
               Nossa expertise não está apenas em intermediar seguros, mas em desenhar proteções tão únicas quanto os projetos que salvaguardamos. Mergulhamos profundamente no universo de cada cliente para emergir com soluções que transcendem o convencional.
@@ -137,14 +137,14 @@ const SobreNos = () => {
                          </div>
                      </div>
                  </div>
-                 <Card className="lg:mt-24">
-                    <CardContent className="p-6 text-center">
-                        <h3 className="font-inter font-semibold text-xl text-fb-blue-deep mb-2">1. Licitação e Contratação</h3>
-                        <p className="font-open-sans text-gray-600 mb-3">
+                  <Card className="lg:mt-24 lg:min-h-[200px] flex flex-col">
+                    <CardContent className="p-6 text-center flex flex-col"> 
+                      <h3 className="font-inter font-semibold text-xl text-fb-blue-deep mb-2">1. Licitação e Contratação</h3>
+                      <p className="font-open-sans text-gray-600 mb-3">
                         Garantimos a segurança contratual desde o início, com Bid Bond e Performance Bond, viabilizando sua participação em grandes projetos.
-                        </p>
+                      </p>
                     </CardContent>
-                 </Card>
+                  </Card>
               </li>
 
               {/* Etapa 2: Execução do Projeto */}
@@ -156,14 +156,14 @@ const SobreNos = () => {
                         </div>
                     </div>
                  </div>
-                 <Card className="lg:mt-24">
-                    <CardContent className="p-6 text-center">
-                        <h3 className="font-inter font-semibold text-xl text-fb-blue-deep mb-2">2. Execução do Projeto</h3>
-                        <p className="font-open-sans text-gray-600 mb-3">
+                  <Card className="lg:mt-24 lg:min-h-[242px] flex flex-col">
+                    <CardContent className="p-6 text-center flex flex-col">
+                      <h3 className="font-inter font-semibold text-xl text-fb-blue-deep mb-2">2. Execução do Projeto</h3>
+                      <p className="font-open-sans text-gray-600 mb-3">
                         Protegemos seus ativos e operações com seguros de Riscos de Engenharia, Responsabilidade Civil e Patrimonial.
-                        </p>
+                      </p>
                     </CardContent>
-                 </Card>
+                  </Card>
               </li>
 
               {/* Etapa 3: Operação e Riscos Contínuos */}
@@ -175,14 +175,14 @@ const SobreNos = () => {
                         </div>
                     </div>
                  </div>
-                 <Card className="lg:mt-24">
-                    <CardContent className="p-6 text-center">
-                        <h3 className="font-inter font-semibold text-xl text-fb-blue-deep mb-2">3. Operação Contínua</h3>
-                        <p className="font-open-sans text-gray-600 mb-3">
+                  <Card className="lg:mt-24 lg:min-h-[242px] flex flex-col">
+                    <CardContent className="p-6 text-center flex flex-col">
+                      <h3 className="font-inter font-semibold text-xl text-fb-blue-deep mb-2">3. Operação Contínua</h3>
+                      <p className="font-open-sans text-gray-600 mb-3">
                         Após a conclusão, garantimos a proteção contra riscos operacionais e ameaças emergentes como Cyber Risks e D&O.
-                        </p>
+                      </p>
                     </CardContent>
-                 </Card>
+                  </Card>
               </li>
             </ul>
             
@@ -191,8 +191,8 @@ const SobreNos = () => {
                 asChild
                 className="bg-fb-blue-deep hover:bg-fb-blue-deep/90 text-white font-inter font-semibold"
               >
-                <Link to="/cotacao">
-                  Conheça Nossas Soluções <ArrowRight className="ml-2 h-4 w-4" />
+                <Link to="/segmentos">
+                  Conheça nossos produtos <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>
