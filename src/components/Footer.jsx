@@ -15,7 +15,7 @@ const Footer = () => {
             <img 
               src={logoCinza} 
               alt="Facility & Bond" 
-              className="h-28 w-auto mb-4 filter brightness-0 invert"
+              className="h-18 w-auto mb-4 filter brightness-0 invert"
             />
             <p className="font-open-sans text-gray-300 mb-4 max-w-md">
               Há três décadas, construímos pontes entre sonhos empresariais e sua realização segura, 
