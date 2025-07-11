@@ -28,38 +28,11 @@ const SobreNos = () => {
       {/* Hero: Segmentos de Atuação */}
       <section className="bg-fb-blue-deep text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="font-inter font-bold text-4xl md:text-5xl mb-6">
-                Como atuamos nas diferentes áreas
-              </h1>
-              <p className="font-open-sans text-xl mb-6 text-gray-200">
-                Nossa atuação abrange desde programas completos de benefícios e soluções para grandes riscos até estruturações sofisticadas de seguro garantia para projetos complexos, sempre com uma abordagem personalizada.
-              </p>
-              <p className="font-open-sans text-lg text-gray-300">
-                Somos reconhecidos por clientes, seguradoras e resseguradoras pela capacidade de criar soluções que atendem precisamente às necessidades de todas as partes envolvidas.
-              </p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg">
-              <div className="text-center">
-                <h2 className="font-inter font-bold text-2xl mb-4">Nosso Diferencial</h2>
-                <p className="font-open-sans text-gray-200">
-                  Nos posicionamos como uma corretora de seguros boutique, referência em soluções personalizadas para riscos complexos.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* História + Posicionamento */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-inter font-bold text-3xl md:text-4xl text-fb-blue-deep mb-6">
+            <h2 className="font-inter font-bold text-3xl md:text-4xl text-white mb-6">
               Nossa História
             </h2>
-            <p className="font-open-sans text-lg text-gray-700 max-w-4xl mx-auto">
+            <p className="font-open-sans text-lg text-white max-w-4xl mx-auto">
               Há três décadas, construímos pontes entre sonhos empresariais e sua realização segura, transformando complexidade em clareza, riscos em oportunidades.
             </p>
           </div>
@@ -71,6 +44,37 @@ const SobreNos = () => {
             <p className="font-open-sans text-lg text-gray-700">
               Nossa expertise não está apenas em intermediar seguros, mas em desenhar proteções tão únicas quanto os projetos que salvaguardamos. Mergulhamos profundamente no universo de cada cliente para emergir com soluções que transcendem o convencional.
             </p>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+      {/* História + Posicionamento */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="font-inter font-bold text-fb-blue-deep md:text-5xl mb-6">
+                Como atuamos nas diferentes áreas
+              </h1>
+              <p className="font-open-sans text-xl mb-6 text-fb-blue-deep">
+                Nossa atuação abrange desde programas completos de benefícios e soluções para grandes riscos até estruturações sofisticadas de seguro garantia para projetos complexos, sempre com uma abordagem personalizada.
+              </p>
+              <p className="font-open-sans text-lg text-fb-blue-deep">
+                Somos reconhecidos por clientes, seguradoras e resseguradoras pela capacidade de criar soluções que atendem precisamente às necessidades de todas as partes envolvidas.
+              </p>
+            </div>
+            <div className="bg-gray-200 backdrop-blur-sm p-8 rounded-lg">
+              <div className="text-center">
+                <h2 className="font-inter font-bold text-fb-blue-deep mb-4">Nosso Diferencial</h2>
+                <p className="font-open-sans text-fb-blue-deep">
+                  Nos posicionamos como uma corretora de seguros boutique, referência em soluções personalizadas para riscos complexos.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
