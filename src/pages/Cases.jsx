@@ -183,7 +183,7 @@ const Cases = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {casesEnergia.map((projeto, index) => (
-              <Card key={index} className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <div key={index} className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <img 
                   src={projeto.imagem} 
                   alt={`Imagem do projeto ${projeto.nome}`}
@@ -229,7 +229,7 @@ const Cases = () => {
                     </div>
                   </div>
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
@@ -252,7 +252,7 @@ const Cases = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {casesImobiliario.map((projeto, index) => (
-               <Card key={index} className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+               <div key={index} className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <img 
                   src={projeto.imagem} 
                   alt={`Imagem do projeto ${projeto.nome}`}
@@ -284,7 +284,7 @@ const Cases = () => {
                     </div>
                   </div>
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
