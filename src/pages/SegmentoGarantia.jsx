@@ -179,30 +179,6 @@ const SegmentoGarantia = () => {
         </div>
       </section>
 
-      {/* Diferenciais */}
-      <section className="py-16 bg-fb-blue-deep text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-inter font-bold text-3xl md:text-4xl mb-6">
-              Nossos Diferenciais em Seguro Garantia
-            </h2>
-            <p className="font-open-sans text-lg text-gray-200 max-w-3xl mx-auto">
-              Três décadas de experiência nos tornaram referência no mercado de seguro garantia.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {diferenciais.map((diferencial, index) => (
-              <div key={index} className="flex items-center space-x-3">
-                <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
-                <p className="font-open-sans text-gray-200">
-                  {diferencial}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* FAQ */}
       <section className="py-16 bg-fb-gray-light">
@@ -275,7 +251,7 @@ const SegmentoGarantia = () => {
                 size="lg"
                 className="border-fb-blue-deep text-fb-blue-deep hover:bg-fb-blue-deep hover:text-white font-inter font-semibold"
               >
-                <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/551144188329" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-5 w-5" />
                   WhatsApp
                 </a>
