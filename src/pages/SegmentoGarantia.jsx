@@ -101,9 +101,6 @@ const SegmentoGarantia = () => {
       <section className="bg-fb-blue-deep text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <Badge className="bg-white/20 text-white mb-4">
-              Segmento de Atuação
-            </Badge>
             <h1 className="font-inter font-bold text-4xl md:text-6xl mb-6">
               Seguro Garantia
             </h1>
